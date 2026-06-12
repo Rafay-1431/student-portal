@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Authentication</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <div class="auth-container">
+        <div class="tab-container">
+            <button class="tab-btn active" onclick="switchForm('login')">Login</button>
+            <button class="tab-btn" onclick="switchForm('signup')">Sign Up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active">
+            <div class="input-group">
+                <label for="loginEmail">Email Address</label>
+                <input type="email" placeholder="name@example.com" id="loginEmail" >
+            </div>
+            <div class="input-group">
+                <label for="loginPassword">Password</label>
+                <input type="password" placeholder="Enter your password" id="loginPassword" >
+                <button id="forgetpassword">forget Password?</button>
+            </div>
+            <button type="submit" class="submit-btn">Welcome Back →</button>
+        </form>
+
+        <form id="signupForm" class="auth-form">
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" placeholder="John Doe" id="signupName" >
+                </div>
+            </div>
+            
+            <div class="input-group">
+                <label for="SignupEmail">Email Address</label>
+                <input type="email" placeholder="name@example.com" id="SignupEmail" >
+            </div>
+            
+            <div class="input-group">
+                <label for="contactNumber">Contact Number</label>
+                <input type="tel" placeholder="+92 300 1234567" id="contactNumber" >
+            </div>
+            
+            <div class="form-grid">
+                <div class="input-group">
+                    <label for="createPassword">Password</label>
+                    <input type="password" placeholder="Create password" id="createPassword" >
+                </div>
+                <div class="input-group">
+                    <label for="confirmPassword">Confirm</label>
+                    <input type="password" placeholder="Confirm password" id="confirmPassword" >
+                </div>
+            </div>
+            <button type="submit" class="submit-btn">Create Account ✨</button>
+        </form>
+
+        <div class="social-auth-section">
+            <p class="divider-text"><span>Or continue with</span></p>
+            
+            <div class="social-buttons-container">
+                <button id="google-btn" class="social-btn">
+                    <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" width="20"> Google
+                </button>
+                <button id="github-btn" class="social-btn">
+                    <img src="https://www.svgrepo.com/show/512317/github-142.svg" alt="GitHub" width="20"> GitHub
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+    <script type="module"  src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/css/iziToast.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Posting-web</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <span class="logo">Students <span class="logo-accent">social</span></span>
+        </div>
+        <div class="nav-right">
+            <span id="nav-username" class="nav-user"></span>
+            <img id="nav-avatar" class="nav-avatar" src="" alt="avatar" />
+            <button class="btn-logout" id="logoutBtn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="layout">
+
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <p class="sidebar-label">Filter</p>
+                <button class="filter-btn active" data-filter="all">All Posts</button>
+                <button class="filter-btn" data-filter="query">Queries</button>
+                <button class="filter-btn" data-filter="achievement">Achievements</button>
+            </div>
+            <div class="sidebar-section">
+                <p class="sidebar-label">Your Profile</p>
+                <div id="sidebar-profile" class="sidebar-profile">
+                    <img id="sidebar-avatar" src="" alt="" class="sidebar-avatar" />
+                    <span id="sidebar-name" class="sidebar-name"></span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN FEED -->
+        <main class="feed-area">
+
+            <!-- CREATE POST CARD -->
+            <div class="create-post-card">
+                <div class="create-post-top">
+                    <img id="create-avatar" class="create-avatar" src="" alt="" />
+                    <input type="text" id="post-title" class="post-title-input" placeholder="Post title..." />
+                </div>
+                <textarea id="post-content" class="post-content-input"
+                    placeholder="Share a query or achievement with your batch..."></textarea>
+
+                <div class="post-image-preview" id="image-preview-container" style="display:none">
+                    <img id="image-preview" src="" alt="preview" />
+                    <button class="remove-image-btn" id="remove-image-btn">✕</button>
+                </div>
+
+                <div class="create-post-bottom">
+                    <div class="post-options">
+                        <label class="image-upload-label">
+                            <input type="file" id="image-upload" accept="image/*" style="display:none" />
+                            <span class="upload-icon">📷 Photo</span>
+                        </label>
+                        <select id="post-category" class="category-select">
+                            <option value="query">Query</option>
+                            <option value="achievement">Achievement</option>
+                        </select>
+                    </div>
+                    <button class="btn-post" id="submit-post-btn">Post</button>
+                </div>
+            </div>
+
+            <!-- FEED POSTS -->
+            <div id="posts-feed" class="posts-feed">
+                <div class="loading-spinner">Loading posts...</div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- COMMENT MODAL -->
+    <div class="modal-overlay" id="comment-modal" style="display:none">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modal-post-title">Comments</h3>
+                <button class="modal-close" id="close-modal">✕</button>
+            </div>
+            <div class="modal-comments" id="modal-comments-list"></div>
+            <div class="modal-comment-input">
+                <input type="text" id="comment-input" placeholder="Write a comment..." />
+                <button id="submit-comment-btn" class="btn-post">Send</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/izitoast/1.4.0/js/iziToast.min.js"></script>
+    <script type="module" src="dashboard.js"></script>
+</body>
+
+</html>
